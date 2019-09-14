@@ -1,4 +1,9 @@
 const webpack = require('webpack')
+const defaultSettings = require('./src/settings.js')
+
+// 网站标题
+const title = defaultSettings.title
+
 module.exports = {
     //部署应用包时的基本 URL
     publicPath: process.env.NODE_ENV === 'production' ? '/h5/' : './',
@@ -12,12 +17,15 @@ module.exports = {
     runtimeCompiler: true,
     // 生产环境是否生成 sourceMap 文件 sourceMap的详解请看末尾
     productionSourceMap: false,
-    configureWebpack: config => {
-        if (process.env.NODE_ENV === 'production') {
-            // 为生产环境修改配置...
-        } else {
-            // 为开发环境修改配置...
-        }
+    configureWebpack: {
+        // provide the app's title in webpack's name field, so that
+        // it can be accessed in index.html to inject the correct title.
+        name: title,
+        // resolve: {
+        //     alias: {
+        //         '@': resolve('src')
+        //     }
+        // }
     },
     // css相关配置
     css: {

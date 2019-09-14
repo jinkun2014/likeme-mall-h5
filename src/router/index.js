@@ -12,7 +12,27 @@ const routes = [
             {
                 path: 'home',
                 component: () => import('@/views/home/index'),
-                meta: {title: '首页'},
+                meta: {title: '首页', navBar: false, noticeBar: true, tabBar: true},
+            },
+            {
+                path: 'category',
+                component: () => import('@/views/category/index'),
+                meta: {title: '商品分类', navBar: false, noticeBar: false, tabBar: true},
+            },
+            {
+                path: 'card',
+                component: () => import('@/views/card/index'),
+                meta: {title: '购物车', navBar: false, noticeBar: false, tabBar: true},
+            },
+            {
+                path: 'me',
+                component: () => import('@/views/me/index'),
+                meta: {title: '个人中心', navBar: false, noticeBar: false, tabBar: true},
+            },
+            {
+                path: 'goods',
+                component: () => import('@/views/goods/index'),
+                meta: {title: '商品详情', navBar: false, noticeBar: false, tabBar: false},
             },
             {
                 path: 'vipOrder/create',
