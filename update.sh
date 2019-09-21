@@ -13,7 +13,7 @@ echo "-----> [`date +%F` `date +%T`]:从GIT拉取 结束 <-----"
 
 # 下载依赖
 echo "-----> [`date +%F` `date +%T`]:下载依赖 开始 <-----"
-npm install
+npm install --unsafe-perm
 echo "-----> [`date +%F` `date +%T`]:下载依赖 结束 <-----"
 
 # 打包
